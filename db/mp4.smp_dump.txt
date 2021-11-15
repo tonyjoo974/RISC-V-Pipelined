@@ -1,0 +1,20 @@
+
+State Machine - |mp4|cpu:cpu|control:control|state
+Name state.jal state.regop state.st2 state.st1 state.calc_addr_st state.ld2 state.ld1 state.calc_addr_ld state.br state.auipc state.lui state.imm state.decode state.fetch3 state.fetch2 state.fetch1 state.jalr 
+state.fetch1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.fetch2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+state.fetch3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+state.decode 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+state.imm 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+state.lui 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+state.auipc 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+state.br 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+state.calc_addr_ld 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+state.ld1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+state.ld2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+state.calc_addr_st 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.regop 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.jal 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.jalr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

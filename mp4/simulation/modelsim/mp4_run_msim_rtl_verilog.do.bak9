@@ -1,0 +1,27 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl {/home/djoo5/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/register.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/regfile.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/pc_reg.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl {/home/djoo5/ece411/Fried-Rice/mp4/hdl/rv32i_types.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl {/home/djoo5/ece411/Fried-Rice/mp4/hdl/mp4.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl {/home/djoo5/ece411/Fried-Rice/mp4/hdl/control_rom.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg {/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg/mem_wb.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg {/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg/if_id.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg {/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg/id_ex.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg {/home/djoo5/ece411/Fried-Rice/mp4/hdl/pipeline_reg/ex_mem.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/forwarding_hazards {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/forwarding_hazards/hazard_detection.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/forwarding_hazards {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/forwarding_hazards/forwarding.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/ir.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/ctrl_register.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/cpu.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/cmp.sv}
+vlog -sv -work work +incdir+/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu {/home/djoo5/ece411/Fried-Rice/mp4/hdl/cpu/alu.sv}
+

@@ -1,0 +1,24 @@
+
+State Machine - |mp4|cache_top:cache_top|l2_cache:l2_cache|l2_cache_control:l2_control|state
+Name state.decode state.write_back state.allocate 
+state.decode 0 0 0 
+state.allocate 1 0 1 
+state.write_back 1 1 0 
+
+State Machine - |mp4|cache_top:cache_top|arbiter:arbiter|state
+Name state.idle state.data state.instruction 
+state.idle 0 0 0 
+state.instruction 1 0 1 
+state.data 1 1 0 
+
+State Machine - |mp4|cache_top:cache_top|cache:data_cache|cache_control:control|state
+Name state.decode state.write_back state.allocate 
+state.decode 0 0 0 
+state.allocate 1 0 1 
+state.write_back 1 1 0 
+
+State Machine - |mp4|cache_top:cache_top|cache:inst_cache|cache_control:control|state
+Name state.decode state.write_back state.allocate 
+state.decode 0 0 0 
+state.allocate 1 0 1 
+state.write_back 1 1 0 

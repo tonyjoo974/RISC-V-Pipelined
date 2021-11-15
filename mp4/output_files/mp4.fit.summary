@@ -1,0 +1,22 @@
+Fitter Status : Successful - Mon May  3 23:44:04 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : mp4
+Top-level Entity Name : mp4
+Family : Arria II GX
+Device : EP2AGX45DF29I3
+Timing Models : Final
+Logic utilization : 98 %
+    Combinational ALUTs : 14,578 / 36,100 ( 40 % )
+    Memory ALUTs : 0 / 18,050 ( 0 % )
+    Dedicated logic registers : 25,286 / 36,100 ( 70 % )
+Total registers : 28780
+Total pins : 165 / 404 ( 41 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 2,939,904 ( 0 % )
+DSP block 18-bit elements : 0 / 232 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 8 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 8 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

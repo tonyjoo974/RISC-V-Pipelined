@@ -1,0 +1,1027 @@
+Analysis & Synthesis report for mp4
+Mon Mar 29 21:12:29 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|pc_register:PC
+ 13. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|if_id:if_id|register:if_id_pc_reg
+ 14. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_pc_reg
+ 15. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_data_reg
+ 16. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_data_reg
+ 17. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg
+ 18. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg
+ 19. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg
+ 20. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg
+ 21. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg
+ 22. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg
+ 23. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg
+ 24. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg
+ 25. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_pc_reg
+ 26. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_alu_reg
+ 27. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs2_data_reg
+ 28. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs1_reg
+ 29. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs2_reg
+ 30. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rd_reg
+ 31. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg
+ 32. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_br_reg
+ 33. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_pc_reg
+ 34. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_alu_reg
+ 35. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rs1_reg
+ 36. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rs2_reg
+ 37. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rd_reg
+ 38. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg
+ 39. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_br_reg
+ 40. Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_mdr_reg
+ 41. Port Connectivity Checks: "cpu:cpu|datapath:datapath|mem_wb:mem_wb"
+ 42. Port Connectivity Checks: "cpu:cpu|datapath:datapath|id_ex:id_ex"
+ 43. Port Connectivity Checks: "cpu:cpu|datapath:datapath"
+ 44. Post-Synthesis Netlist Statistics for Top Partition
+ 45. Elapsed Time Per Partition
+ 46. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++-----------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status       ; Successful - Mon Mar 29 21:12:29 2021           ;
+; Quartus Prime Version             ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                     ; mp4                                             ;
+; Top-level Entity Name             ; mp4                                             ;
+; Family                            ; Arria II GX                                     ;
+; Logic utilization                 ; N/A                                             ;
+;     Combinational ALUTs           ; 1,436                                           ;
+;     Memory ALUTs                  ; 0                                               ;
+;     Dedicated logic registers     ; 1,472                                           ;
+; Total registers                   ; 1472                                            ;
+; Total pins                        ; 171                                             ;
+; Total virtual pins                ; 0                                               ;
+; Total block memory bits           ; 0                                               ;
+; DSP block 18-bit elements         ; 0                                               ;
+; Total GXB Receiver Channel PCS    ; 0                                               ;
+; Total GXB Receiver Channel PMA    ; 0                                               ;
+; Total GXB Transmitter Channel PCS ; 0                                               ;
+; Total GXB Transmitter Channel PMA ; 0                                               ;
+; Total PLLs                        ; 0                                               ;
+; Total DLLs                        ; 0                                               ;
++-----------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; EP2AGX45DF29I3     ;                    ;
+; Top-level entity name                                                           ; mp4                ; mp4                ;
+; Family name                                                                     ; Arria II GX        ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                        ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processors 7-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+---------+
+; mp4/hdl/pipeline_reg/mem_wb.sv   ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/mem_wb.sv ;         ;
+; mp4/hdl/pipeline_reg/if_id.sv    ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/if_id.sv  ;         ;
+; mp4/hdl/pipeline_reg/id_ex.sv    ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/id_ex.sv  ;         ;
+; mp4/hdl/pipeline_reg/ex_mem.sv   ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/ex_mem.sv ;         ;
+; mp4/hdl/cpu/register.sv          ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/register.sv        ;         ;
+; mp4/hdl/cpu/regfile.sv           ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/regfile.sv         ;         ;
+; mp4/hdl/cpu/pc_reg.sv            ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/pc_reg.sv          ;         ;
+; mp4/hdl/cpu/ir.sv                ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/ir.sv              ;         ;
+; mp4/hdl/cpu/datapath.sv          ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv        ;         ;
+; mp4/hdl/cpu/ctrl_register.sv     ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/ctrl_register.sv   ;         ;
+; mp4/hdl/cpu/cpu.sv               ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/cpu.sv             ;         ;
+; mp4/hdl/cpu/cmp.sv               ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/cmp.sv             ;         ;
+; mp4/hdl/cpu/alu.sv               ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/alu.sv             ;         ;
+; mp4/hdl/rv32i_types.sv           ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_types.sv         ;         ;
+; mp4/hdl/rv32i_mux_types.sv       ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv     ;         ;
+; mp4/hdl/mp4.sv                   ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv                 ;         ;
+; mp4/hdl/control_rom.sv           ; yes             ; User SystemVerilog HDL File  ; /home/alberty3/ece411/Fried-Rice/mp4/hdl/control_rom.sv         ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++-----------------------------------------------+-----------+
+; Resource                                      ; Usage     ;
++-----------------------------------------------+-----------+
+; Estimated ALUTs Used                          ; 1436      ;
+;     -- Combinational ALUTs                    ; 1436      ;
+;     -- Memory ALUTs                           ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+; Dedicated logic registers                     ; 1472      ;
+;                                               ;           ;
+; Estimated ALUTs Unavailable                   ; 71        ;
+;     -- Due to unpartnered combinational logic ; 71        ;
+;     -- Due to Memory ALUTs                    ; 0         ;
+;                                               ;           ;
+; Total combinational functions                 ; 1436      ;
+; Combinational ALUT usage by number of inputs  ;           ;
+;     -- 7 input functions                      ; 11        ;
+;     -- 6 input functions                      ; 921       ;
+;     -- 5 input functions                      ; 179       ;
+;     -- 4 input functions                      ; 114       ;
+;     -- <=3 input functions                    ; 211       ;
+;                                               ;           ;
+; Combinational ALUTs by mode                   ;           ;
+;     -- normal mode                            ; 1332      ;
+;     -- extended LUT mode                      ; 11        ;
+;     -- arithmetic mode                        ; 93        ;
+;     -- shared arithmetic mode                 ; 0         ;
+;                                               ;           ;
+; Estimated ALUT/register pairs used            ; 2617      ;
+;                                               ;           ;
+; Total registers                               ; 1472      ;
+;     -- Dedicated logic registers              ; 1472      ;
+;     -- I/O registers                          ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+;                                               ;           ;
+;                                               ;           ;
+; I/O pins                                      ; 171       ;
+;                                               ;           ;
+; DSP block 18-bit elements                     ; 0         ;
+;                                               ;           ;
+; Maximum fan-out node                          ; clk~input ;
+; Maximum fan-out                               ; 1472      ;
+; Total fan-out                                 ; 13710     ;
+; Average fan-out                               ; 4.22      ;
++-----------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
++---------------------------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+----------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Entity Name   ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+----------------------------------------------------------------------------+---------------+--------------+
+; |mp4                                        ; 1436 (0)            ; 1472 (0)                  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 171  ; 0            ; |mp4                                                                       ; mp4           ; work         ;
+;    |cpu:cpu|                                ; 1436 (0)            ; 1472 (0)                  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu                                                               ; cpu           ; work         ;
+;       |datapath:datapath|                   ; 1436 (290)          ; 1472 (0)                  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath                                             ; datapath      ; work         ;
+;          |alu:alu_inst|                     ; 323 (323)           ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst                                ; alu           ; work         ;
+;          |cmp:cmp|                          ; 38 (38)             ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|cmp:cmp                                     ; cmp           ; work         ;
+;          |control_rom:CONTROL_ROM|          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|control_rom:CONTROL_ROM                     ; control_rom   ; work         ;
+;          |ex_mem:ex_mem|                    ; 0 (0)               ; 139 (0)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem                               ; ex_mem        ; work         ;
+;             |ctrl_register:ex_mem_ctrl_reg| ; 0 (0)               ; 17 (17)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|ctrl_register:ex_mem_ctrl_reg ; ctrl_register ; work         ;
+;             |register:ex_mem_alu_reg|       ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_alu_reg       ; register      ; work         ;
+;             |register:ex_mem_br_reg|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_br_reg        ; register      ; work         ;
+;             |register:ex_mem_pc_reg|        ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_pc_reg        ; register      ; work         ;
+;             |register:ex_mem_rd_reg|        ; 0 (0)               ; 5 (5)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rd_reg        ; register      ; work         ;
+;             |register:ex_mem_rs2_data_reg|  ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs2_data_reg  ; register      ; work         ;
+;             |register:ex_mem_u_imm_reg|     ; 0 (0)               ; 20 (20)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg     ; register      ; work         ;
+;          |id_ex:id_ex|                      ; 326 (0)             ; 118 (0)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex                                 ; id_ex         ; work         ;
+;             |ctrl_register:id_ex_ctrl_reg|  ; 1 (1)               ; 29 (29)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg    ; ctrl_register ; work         ;
+;             |register:id_ex_b_imm_reg|      ; 0 (0)               ; 12 (12)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg        ; register      ; work         ;
+;             |register:id_ex_i_imm_reg|      ; 0 (0)               ; 5 (5)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg        ; register      ; work         ;
+;             |register:id_ex_j_imm_reg|      ; 0 (0)               ; 8 (8)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg        ; register      ; work         ;
+;             |register:id_ex_pc_reg|         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_pc_reg           ; register      ; work         ;
+;             |register:id_ex_rs2_data_reg|   ; 325 (325)           ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_data_reg     ; register      ; work         ;
+;          |if_id:if_id|                      ; 0 (0)               ; 64 (0)                    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|if_id:if_id                                 ; if_id         ; work         ;
+;             |ir:IR|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|if_id:if_id|ir:IR                           ; ir            ; work         ;
+;             |register:if_id_pc_reg|         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|if_id:if_id|register:if_id_pc_reg           ; register      ; work         ;
+;          |mem_wb:mem_wb|                    ; 0 (0)               ; 127 (0)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb                               ; mem_wb        ; work         ;
+;             |ctrl_register:mem_wb_ctrl_reg| ; 0 (0)               ; 5 (5)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|ctrl_register:mem_wb_ctrl_reg ; ctrl_register ; work         ;
+;             |register:mem_wb_alu_reg|       ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_alu_reg       ; register      ; work         ;
+;             |register:mem_wb_br_reg|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_br_reg        ; register      ; work         ;
+;             |register:mem_wb_mdr_reg|       ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_mdr_reg       ; register      ; work         ;
+;             |register:mem_wb_pc_reg|        ; 0 (0)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_pc_reg        ; register      ; work         ;
+;             |register:mem_wb_rd_reg|        ; 0 (0)               ; 5 (5)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rd_reg        ; register      ; work         ;
+;             |register:mem_wb_u_imm_reg|     ; 0 (0)               ; 20 (20)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg     ; register      ; work         ;
+;          |pc_register:PC|                   ; 3 (3)               ; 32 (32)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|pc_register:PC                              ; pc_register   ; work         ;
+;          |regfile:regfile|                  ; 421 (421)           ; 992 (992)                 ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile                             ; regfile       ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+----------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                      ;
++--------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; Register name                                                                        ; Reason for Removal                                                                               ;
++--------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[13..31]          ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[12]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[11..31]          ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[12]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[20..31]          ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[12]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[11..31]          ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[12]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[31]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[12]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[10]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[10]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[10]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[10]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[10]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[10]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[30]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[10]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[9]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[9]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[9]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[9]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[9]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[9]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[29]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[9]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[8]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[8]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[8]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[8]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[8]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[8]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[28]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[8]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[7]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[7]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[7]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[7]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[7]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[7]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[27]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[7]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[6]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[6]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[6]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[6]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[6]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[6]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[26]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[6]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[5]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[5]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[5]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[5]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[5]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[5]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[25]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[5]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[4]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[4]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg|data[4]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[4]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[24]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[4]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[3]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[3]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg|data[3]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[3]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[23]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[3]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[2]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[2]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg|data[2]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[2]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[22]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[2]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[1]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[1]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg|data[1]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[1]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[21]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[1]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[11]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[0]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg|data[0]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[0]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[20]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg|data[0]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg|data[4]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[19]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[19]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[19]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg|data[3]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[18]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[18]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[18]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg|data[2]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[17]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[17]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[17]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg|data[1]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[16]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[16]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[16]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg|data[0]                 ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[15]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[15]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[15]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[14]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[14]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[13]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[13]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[12]              ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[12]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[0]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg|data.pcmux_sel[0] ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg|data[0]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg|data.pcmux_sel[0] ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg|data[0..11]           ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg|data.pcmux_sel[0] ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg|data[0]                  ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[11]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[0]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[11]              ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg|data[4]                  ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[4]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[4]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[4]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg|data[3]                  ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[3]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[3]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[3]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg|data[2]                  ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[2]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[2]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[2]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg|data[1]                  ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[1]               ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg|data[1]               ; Merged with cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg|data[1]               ;
+; cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg|data[1..11]        ; Merged with cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg|data[0]            ;
+; cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg|data[1..11]        ; Merged with cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg|data[0]            ;
+; cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg|data.pcmux_sel[0] ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg|data[0]            ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg|data[0]            ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][31]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][30]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][29]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][28]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][27]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][26]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][25]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][24]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][23]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][22]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][21]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][20]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][19]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][18]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][17]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][16]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][15]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][14]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][13]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][12]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][11]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][10]                                ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][9]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][8]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][7]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][6]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][5]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][4]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][3]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][2]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][1]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; cpu:cpu|datapath:datapath|regfile:regfile|data[0][0]                                 ; Stuck at GND due to stuck port data_in                                                           ;
+; Total Number of Removed Registers = 207                                              ;                                                                                                  ;
++--------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                   ;
++--------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
+; Register name                                                                        ; Reason for Removal        ; Registers Removed due to This Register                                     ;
++--------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
+; cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg|data.pcmux_sel[0] ; Stuck at GND              ; cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg|data[0], ;
+;                                                                                      ; due to stuck port data_in ; cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg|data[0], ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][11],                     ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][10],                     ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][9],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][8],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][7],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][6],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][5],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][4],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][3],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][2],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][1],                      ;
+;                                                                                      ;                           ; cpu:cpu|datapath:datapath|regfile:regfile|data[0][0]                       ;
++--------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1472  ;
+; Number of registers using Synchronous Clear  ; 1470  ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1472  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[16][30]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[8][8]                                         ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[24][16]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[4][15]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[20][16]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[12][25]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[28][4]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[2][15]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[18][27]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[10][2]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[26][11]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[6][4]                                         ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[22][17]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[14][28]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[30][7]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[1][8]                                         ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[17][12]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[9][16]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[25][21]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[5][28]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[21][11]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[13][11]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[29][10]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[3][2]                                         ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[19][10]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[11][20]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[27][28]                                       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[7][7]                                         ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[23][7]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[15][7]                                        ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|data[31][26]                                       ;
+; 3:1                ; 402 bits  ; 804 ALUTs     ; 0 ALUTs              ; 804 ALUTs              ; Yes        ; |mp4|cpu:cpu|datapath:datapath|mem_wb:mem_wb|ctrl_register:mem_wb_ctrl_reg|data.regfilemux_sel[2] ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; Yes        ; |mp4|cpu:cpu|datapath:datapath|pc_register:PC|data[5]                                             ;
+; 4:1                ; 28 bits   ; 56 ALUTs      ; 0 ALUTs              ; 56 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|pc_register:PC|data[21]                                            ;
+; 4:1                ; 10 bits   ; 20 ALUTs      ; 0 ALUTs              ; 20 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg|data.opcode[3]            ;
+; 35:1               ; 32 bits   ; 736 ALUTs     ; 640 ALUTs            ; 96 ALUTs               ; Yes        ; |mp4|cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_data_reg|data[14]                   ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftLeft0                                            ;
+; 4:1                ; 49 bits   ; 98 ALUTs      ; 98 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftRight1                                           ;
+; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftRight1                                           ;
+; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftRight0                                           ;
+; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftLeft0                                            ;
+; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftLeft0                                            ;
+; 4:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|ShiftLeft0                                            ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|control_rom:CONTROL_ROM|ctrl                                       ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|mem_data_in                                                        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|mem_data_in                                                        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|mem_data_in                                                        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|mem_data_in                                                        ;
+; 4:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|control_rom:CONTROL_ROM|ctrl                                       ;
+; 4:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|wmask                                                              ;
+; 6:1                ; 6 bits    ; 24 ALUTs      ; 12 ALUTs             ; 12 ALUTs               ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector31                                                         ;
+; 6:1                ; 11 bits   ; 44 ALUTs      ; 22 ALUTs             ; 22 ALUTs               ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector14                                                         ;
+; 6:1                ; 8 bits    ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector22                                                         ;
+; 6:1                ; 4 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector40                                                         ;
+; 33:1               ; 32 bits   ; 704 ALUTs     ; 704 ALUTs            ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|regfile:regfile|reg_a[8]                                           ;
+; 6:1                ; 3 bits    ; 12 ALUTs      ; 6 ALUTs              ; 6 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|rmask                                                              ;
+; 7:1                ; 16 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector51                                                         ;
+; 13:1               ; 5 bits    ; 40 ALUTs      ; 40 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector24                                            ;
+; 14:1               ; 8 bits    ; 72 ALUTs      ; 64 ALUTs             ; 8 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector7                                             ;
+; 9:1                ; 4 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|control_rom:CONTROL_ROM|ctrl                                       ;
+; 13:1               ; 3 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector18                                            ;
+; 15:1               ; 2 bits    ; 20 ALUTs      ; 16 ALUTs             ; 4 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector21                                            ;
+; 16:1               ; 3 bits    ; 30 ALUTs      ; 30 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector30                                            ;
+; 16:1               ; 2 bits    ; 20 ALUTs      ; 18 ALUTs             ; 2 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector5                                             ;
+; 17:1               ; 3 bits    ; 33 ALUTs      ; 30 ALUTs             ; 3 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|alu:alu_inst|Selector1                                             ;
+; 10:1               ; 4 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector65                                                         ;
+; 10:1               ; 3 bits    ; 18 ALUTs      ; 18 ALUTs             ; 0 ALUTs                ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector59                                                         ;
+; 13:1               ; 6 bits    ; 48 ALUTs      ; 36 ALUTs             ; 12 ALUTs               ; No         ; |mp4|cpu:cpu|datapath:datapath|Selector71                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|pc_register:PC ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|if_id:if_id|register:if_id_pc_reg ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_pc_reg ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_data_reg ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_data_reg ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs2_reg ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rd_reg ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_i_imm_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_u_imm_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_b_imm_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_s_imm_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_j_imm_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_pc_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_alu_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs2_data_reg ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs1_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rs2_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_rd_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_u_imm_reg ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_br_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 1     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_pc_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_alu_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rs1_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rs2_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_rd_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_u_imm_reg ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_br_reg ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; width          ; 1     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:datapath|mem_wb:mem_wb|register:mem_wb_mdr_reg ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|datapath:datapath|mem_wb:mem_wb"                                                            ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                             ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; ctrl_out.opcode      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.funct3      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.aluop       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.pcmux_sel   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.alumux1_sel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.alumux2_sel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.cmpmux_sel  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.cmpop       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.mem_read    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ctrl_out.mem_write   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs1_out              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs2_out              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|datapath:datapath|id_ex:id_ex"                                                      ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; rs1_data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|datapath:datapath"                                                                        ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; imem_address[1..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dmem_address[1..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriaii_ff            ; 1472                        ;
+;     ENA SCLR          ; 1442                        ;
+;     ENA SCLR SLD      ; 28                          ;
+;     ENA SLD           ; 2                           ;
+; boundary_port         ; 212                         ;
+; stratixiv_lcell_comb  ; 1438                        ;
+;     arith             ; 93                          ;
+;         1 data inputs ; 61                          ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 27                          ;
+;     extend            ; 11                          ;
+;         7 data inputs ; 11                          ;
+;     normal            ; 1334                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 56                          ;
+;         3 data inputs ; 93                          ;
+;         4 data inputs ; 109                         ;
+;         5 data inputs ; 152                         ;
+;         6 data inputs ; 921                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 5.79                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Mon Mar 29 21:12:00 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mp4 -c mp4
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/pipeline_reg/mem_wb.sv
+    Info (12023): Found entity 1: mem_wb File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/mem_wb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/pipeline_reg/if_id.sv
+    Info (12023): Found entity 1: if_id File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/if_id.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/pipeline_reg/id_ex.sv
+    Info (12023): Found entity 1: id_ex File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/id_ex.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/pipeline_reg/ex_mem.sv
+    Info (12023): Found entity 1: ex_mem File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/ex_mem.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/given_cache/line_adapter.sv
+    Info (12023): Found entity 1: line_adapter File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/given_cache/line_adapter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/given_cache/data_array.sv
+    Info (12023): Found entity 1: data_array File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/given_cache/data_array.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/given_cache/cache_datapath.sv
+    Info (12023): Found entity 1: cache_datapath File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/given_cache/cache_datapath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/given_cache/cache_control.sv
+    Info (12023): Found entity 1: cache_control File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/given_cache/cache_control.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/given_cache/cache.sv
+    Info (12023): Found entity 1: cache File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/given_cache/cache.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/given_cache/array.sv
+    Info (12023): Found entity 1: array File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/given_cache/array.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/register.sv
+    Info (12023): Found entity 1: register File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/register.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/regfile.sv
+    Info (12023): Found entity 1: regfile File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/regfile.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/pc_reg.sv
+    Info (12023): Found entity 1: pc_register File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/pc_reg.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/ir.sv
+    Info (12023): Found entity 1: ir File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/ir.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/datapath.sv
+    Info (12023): Found entity 1: datapath File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/ctrl_register.sv
+    Info (12023): Found entity 1: ctrl_register File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/ctrl_register.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/cpu.sv
+    Info (12023): Found entity 1: cpu File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/cpu.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/cmp.sv
+    Info (12023): Found entity 1: cmp File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/cmp.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/cpu/alu.sv
+    Info (12023): Found entity 1: alu File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/alu.sv Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file mp4/hdl/rv32i_types.sv
+    Info (12022): Found design unit 1: rv32i_types (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_types.sv Line: 3
+Info (12021): Found 6 design units, including 0 entities, in source file mp4/hdl/rv32i_mux_types.sv
+    Info (12022): Found design unit 1: pcmux (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv Line: 2
+    Info (12022): Found design unit 2: marmux (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv Line: 10
+    Info (12022): Found design unit 3: cmpmux (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv Line: 17
+    Info (12022): Found design unit 4: alumux (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv Line: 24
+    Info (12022): Found design unit 5: regfilemux (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv Line: 40
+    Info (12022): Found design unit 6: rdmux (SystemVerilog) File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/rv32i_mux_types.sv Line: 54
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/mp4.sv
+    Info (12023): Found entity 1: mp4 File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file mp4/hdl/control_rom.sv
+    Info (12023): Found entity 1: control_rom File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/control_rom.sv Line: 3
+Info (12127): Elaborating entity "mp4" for the top level hierarchy
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 37
+Info (12128): Elaborating entity "datapath" for hierarchy "cpu:cpu|datapath:datapath" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/cpu.sv Line: 42
+Warning (10036): Verilog HDL or VHDL warning at datapath.sv(306): object "arith_funct3" assigned a value but never read File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 306
+Warning (10270): Verilog HDL Case Statement warning at datapath.sv(329): incomplete case statement has no default case item File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 329
+Info (12128): Elaborating entity "pc_register" for hierarchy "cpu:cpu|datapath:datapath|pc_register:PC" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 137
+Info (12128): Elaborating entity "regfile" for hierarchy "cpu:cpu|datapath:datapath|regfile:regfile" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 151
+Info (12128): Elaborating entity "control_rom" for hierarchy "cpu:cpu|datapath:datapath|control_rom:CONTROL_ROM" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 158
+Warning (10036): Verilog HDL or VHDL warning at control_rom.sv(13): object "store_funct3" assigned a value but never read File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/control_rom.sv Line: 13
+Warning (10036): Verilog HDL or VHDL warning at control_rom.sv(15): object "arith_funct3" assigned a value but never read File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/control_rom.sv Line: 15
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu|datapath:datapath|alu:alu_inst" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 167
+Info (12128): Elaborating entity "cmp" for hierarchy "cpu:cpu|datapath:datapath|cmp:cmp" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 174
+Info (12128): Elaborating entity "if_id" for hierarchy "cpu:cpu|datapath:datapath|if_id:if_id" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 197
+Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu|datapath:datapath|if_id:if_id|register:if_id_pc_reg" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/if_id.sv Line: 30
+Info (12128): Elaborating entity "ir" for hierarchy "cpu:cpu|datapath:datapath|if_id:if_id|ir:IR" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/if_id.sv Line: 48
+Info (12128): Elaborating entity "id_ex" for hierarchy "cpu:cpu|datapath:datapath|id_ex:id_ex" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 228
+Info (12128): Elaborating entity "ctrl_register" for hierarchy "cpu:cpu|datapath:datapath|id_ex:id_ex|ctrl_register:id_ex_ctrl_reg" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/id_ex.sv Line: 52
+Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu|datapath:datapath|id_ex:id_ex|register:id_ex_rs1_reg" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/id_ex.sv Line: 76
+Info (12128): Elaborating entity "ex_mem" for hierarchy "cpu:cpu|datapath:datapath|ex_mem:ex_mem" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 253
+Info (12128): Elaborating entity "register" for hierarchy "cpu:cpu|datapath:datapath|ex_mem:ex_mem|register:ex_mem_br_reg" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/pipeline_reg/ex_mem.sv Line: 100
+Info (12128): Elaborating entity "mem_wb" for hierarchy "cpu:cpu|datapath:datapath|mem_wb:mem_wb" File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/cpu/datapath.sv Line: 279
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "imem_address[0]" is stuck at GND File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 11
+    Warning (13410): Pin "imem_address[1]" is stuck at GND File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 11
+    Warning (13410): Pin "dmem_address[0]" is stuck at GND File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 12
+    Warning (13410): Pin "dmem_address[1]" is stuck at GND File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 12
+    Warning (13410): Pin "imem_read" is stuck at VCC File: /home/alberty3/ece411/Fried-Rice/mp4/hdl/mp4.sv Line: 15
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2969 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 68 input pins
+    Info (21059): Implemented 103 output pins
+    Info (21061): Implemented 2798 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 1194 megabytes
+    Info: Processing ended: Mon Mar 29 21:12:29 2021
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:33
+
+
