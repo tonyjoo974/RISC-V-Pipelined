@@ -1,3 +1,3 @@
 # Fully-Pipelined-RISC-V-Processor
 
-https://docs.google.com/viewer?url=https://github.com/tonyjoo974/RISC-V-Pipelined/blob/master/Final_Report.pdf
+<img src="https://github.com/tonyjoo974/RISC-V-Pipelined/blob/master/riscv.png" width="70%"></img>
